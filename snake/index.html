@@ -55,21 +55,10 @@ function getTheme () {
     }, 10);
 }
 
-if (navigator.onLine && window.location.hostname === 'patorjk.com') {
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-3312460-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-}
 </script>
 </head>
 <body>
-    <div class="snake-toolbar">
+    <!-- div class="snake-toolbar">
       <div style="display:inline-block;margin-right:10px;">
         <span>Theme:</span>
         <select onchange="getTheme()" id="select">
@@ -79,16 +68,16 @@ if (navigator.onLine && window.location.hostname === 'patorjk.com') {
             <option>Green Theme by CoffeeCatDE</option>
             <option>Matrix Theme by Geahad Haymor</option>
         </select>
-      </div>
-      <div style="display:inline-block;margin-right:10px;">
+      </div -->
+      <!-- div style="display:inline-block;margin-right:10px;">
         <span>Mode:</span>
         <select id="selectMode">
             <option value="100">Easy</option>
             <option value="75" selected>Medium</option>
             <option value="50">Hard</option>
         </select>
-      </div>
-      <button onclick="go_full_screen()">Full Screen</button><br />
+      </div -->
+      <!-- button onclick="go_full_screen()">Full Screen</button --><br />
     </div>
 
     <!--
