@@ -3,49 +3,74 @@ function swapTiles(cell1, cell2) {
     document.getElementById(cell1).className = document.getElementById(cell2).className;
     document.getElementById(cell2).className = temp;
 }
+var tiles = [[0,1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]];
+var shuffled = false;
+var solved = false;
 
-function shuffle() {
-    //Use nested loops to access each cell of the 3x3 grid
-    for (var row = 1; row <= 3; row++) { //For each row of the 3x3 grid
-        for (var column = 1; column <= 3; column++) { //For each column in this row
+function swapTilesInt(row1, col1, row2, col2)
+{
+    swapTiles("cell" + row1 + col1, "cell" + row2 + col2);
+    var temp = tiles[row1-1][col1-1];
+    tiles[row1-1][col1-1] = tiles[row2-1][col2-1];
+    tiles[row2-1][col2-1] = temp;
 
-            var row2 = Math.floor(Math.random() * 3 + 1); //Pick a random row from 1 to 3
-            var column2 = Math.floor(Math.random() * 3 + 1); //Pick a random column from 1 to 3
+    if(!shuffled)
+        return;
 
-            swapTiles("cell" + row + column, "cell" + row2 + column2); //Swap the look & feel of both cells
+    for(var i = 0; i < 15; i++)
+    {
+        if(tiles[Math.floor(i/4)][i%4] > tiles[Math.floor((i+1)/4)][(i+1)%4])
+        {
+            return;
         }
     }
+
+    if(!solved)
+    {
+        var element = document.createElement("div");
+        element.innerHTML = "<center>Solved! The password is " + (Math.pow(i,2) - i * 8 + 1) + ".</center>";
+        document.body.appendChild(element);
+        solved = true;
+    }
+}
+
+function shuffle() {
+    for(var i = 0; i < 2000; i++)
+    {
+        clickTile(Math.floor(Math.random() * 4 + 1), Math.floor(Math.random() * 4 + 1));
+    }
+    shuffled = true;
 }
 
 function clickTile(row, column) {
     var cell = document.getElementById("cell" + row + column);
     var tile = cell.className;
-    if (tile != "tile9") {
+    if (tile != "tile16") {
         //Checking if white tile on the right
-        if (column < 3) {
-            if (document.getElementById("cell" + row + (column + 1)).className == "tile9") {
-                swapTiles("cell" + row + column, "cell" + row + (column + 1));
+        if (column < 4) {
+            if (document.getElementById("cell" + row + (column + 1)).className == "tile16") {
+                swapTilesInt(row, column, row, (column + 1));
                 return;
             }
         }
         //Checking if white tile on the left
         if (column > 1) {
-            if (document.getElementById("cell" + row + (column - 1)).className == "tile9") {
-                swapTiles("cell" + row + column, "cell" + row + (column - 1));
+            if (document.getElementById("cell" + row + (column - 1)).className == "tile16") {
+                swapTilesInt(row, column, row, (column - 1));
                 return;
             }
         }
         //Checking if white tile is above
         if (row > 1) {
-            if (document.getElementById("cell" + (row - 1) + column).className == "tile9") {
-                swapTiles("cell" + row + column, "cell" + (row - 1) + column);
+            if (document.getElementById("cell" + (row - 1) + column).className == "tile16") {
+                swapTilesInt(row, column, (row - 1), column);
                 return;
             }
         }
         //Checking if white tile is below
-        if (row < 3) {
-            if (document.getElementById("cell" + (row + 1) + column).className == "tile9") {
-                swapTiles("cell" + row + column, "cell" + (row + 1) + column);
+        if (row < 4) {
+            if (document.getElementById("cell" + (row + 1) + column).className == "tile16") {
+                swapTilesInt(row, column, (row + 1), column);
                 return;
             }
         }
