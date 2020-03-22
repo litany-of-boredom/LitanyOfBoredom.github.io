@@ -680,7 +680,7 @@ SNAKE.Board = SNAKE.Board || (function() {
 
             elmHighscorePanel = document.createElement("div");
             elmHighscorePanel.className = "snake-panel-component";
-            elmHighscorePanel.innerHTML = "Highscore: " + localStorage.jsSnakeHighScore;
+            // elmHighscorePanel.innerHTML = "Highscore: " + localStorage.jsSnakeHighScore;
 
             elmWelcome = createWelcomeElement();
             elmTryAgain = createTryAgainElement();
@@ -759,7 +759,7 @@ SNAKE.Board = SNAKE.Board || (function() {
             tmpElm.className = elmClassName;
 
             var gameEndTxt = document.createElement("div");
-            gameEndTxt.innerHTML = "JavaScript Snake<p></p>" + message + "<p></p>";
+            gameEndTxt.innerHTML = "Dexterity Test<p></p>" + message + "<p></p>";
             var gameEndStart = document.createElement("button");
             gameEndStart.appendChild(document.createTextNode("Play Again?"));
 
@@ -791,7 +791,7 @@ SNAKE.Board = SNAKE.Board || (function() {
         }
 
         function createWinElement() {
-            return createGameEndElement("You win! :D", "sbWin", "snake-win-dialog");
+            return createGameEndElement("You weren't supposed to do that", "sbWin", "snake-win-dialog");
         }
 
         function handleEndCondition(elmDialog) {

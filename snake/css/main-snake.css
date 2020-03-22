@@ -6,13 +6,13 @@ http://patorjk.com/games/snake
 body {
 	margin:0px;
 	padding:0px;
-    background-color: #FC5454;
+    background-color: #FF0000;
 }
 
 #game-area {
 	margin:10px;
 	padding:0px;
-    background-color: #FC5454;
+    background-color: #FF0000;
 }
 
 #mode-wrapper {
@@ -25,11 +25,11 @@ body {
 #game-area:focus { outline: none; }
 
 a.snake-link, a.snake-link:link, a.snake-link:visited {
-  color: #FCFC54;
+  color: #00ff00;
 }
 
 a.snake-link:hover {
-  color: #FfFf54;
+  color: #00ff00;
 }
 
 .snake-pause-screen {
@@ -54,7 +54,7 @@ a.snake-link:hover {
     font-size: 14px;
     color: #ffffff;
     text-align: center;
-    background-color: #FC5454;
+    background-color: #FF0000;
     padding: 8px;
     margin: 0px;
 }
@@ -87,8 +87,8 @@ a.snake-link:hover {
     margin: 0px;
     padding: 0px;
     position: absolute;
-    background-color: #0000A8;
-    border: 0px solid #0000A8;
+    background-color: #000000;
+    border: 0px solid #000000;
 }
 
 .snake-game-container {
