@@ -648,7 +648,7 @@ SNAKE.Board = SNAKE.Board || (function() {
             myKeyListener,
             isPaused = false,//note: both the board and the snake can be paused
             // Board components
-            elmContainer, elmPlayingField, elmAboutPanel, elmLengthPanel, elmHighscorePanel, elmWelcome, elmTryAgain, elmWin, elmPauseScreen;
+            elmContainer, elmPlayingField, elmAboutPanel, elmLengthPanel, elmHighscorePanel, elmWelcome, elmTryAgain, elmNextPuzzle, elmWin, elmPauseScreen;
 
         // --- public variables ---
         me.grid = [];
@@ -684,6 +684,7 @@ SNAKE.Board = SNAKE.Board || (function() {
 
             elmWelcome = createWelcomeElement();
             elmTryAgain = createTryAgainElement();
+            elmNextPuzzle = createNextPuzzleElement();
             elmWin = createWinElement();
 
             SNAKE.addEventListener( elmContainer, "keyup", function(evt) {
@@ -704,6 +705,7 @@ SNAKE.Board = SNAKE.Board || (function() {
             elmContainer.appendChild(elmHighscorePanel);
             elmContainer.appendChild(elmWelcome);
             elmContainer.appendChild(elmTryAgain);
+            elmContainer.appendChild(elmNextPuzzle);
             elmContainer.appendChild(elmWin);
 
             mySnake = new SNAKE.Snake({playingBoard:me,startRow:2,startCol:2});
@@ -784,6 +786,10 @@ SNAKE.Board = SNAKE.Board || (function() {
             tmpElm.appendChild(gameEndTxt);
             tmpElm.appendChild(gameEndStart);
             return tmpElm;
+        }
+
+        function createNextPuzzleElement() {
+            return createGameEndElement("Placeholder for next puzzle", "sbWin", "snake-win-dialog");
         }
 
         function createTryAgainElement() {
@@ -1042,7 +1048,10 @@ SNAKE.Board = SNAKE.Board || (function() {
         * @method handleDeath
         */
         me.handleDeath = function() {
-            handleEndCondition(elmTryAgain);
+            if(mySnake.snakeLength == 106)
+                handleEndCondition(elmNextPuzzle);
+            else
+                handleEndCondition(elmTryAgain);
         };
 
         /**
