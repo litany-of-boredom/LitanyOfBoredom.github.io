@@ -644,6 +644,7 @@ SNAKE.Board = SNAKE.Board || (function() {
             GRID_FOOD_VALUE = -1, // the value of a spot on the board that represents snake food, MUST BE NEGATIVE
             myFood,
             mySnake,
+            snakeSegment = 15,
             boardState = 1, // 0: in active; 1: awaiting game start; 2: playing game
             myKeyListener,
             isPaused = false,//note: both the board and the snake can be paused
@@ -789,7 +790,7 @@ SNAKE.Board = SNAKE.Board || (function() {
         }
 
         function createNextPuzzleElement() {
-            return createGameEndElement("Placeholder for next puzzle", "sbWin", "snake-win-dialog");
+            return createGameEndElement("Placeholder for next puzzle", "sbNextPuzzle", "snake-win-dialog");
         }
 
         function createTryAgainElement() {
@@ -1048,7 +1049,7 @@ SNAKE.Board = SNAKE.Board || (function() {
         * @method handleDeath
         */
         me.handleDeath = function() {
-            if(mySnake.snakeLength == 106)
+            if(mySnake.snakeLength == Math.pow(snakeSegment,2) - 8 * snakeSegment + 1)
                 handleEndCondition(elmNextPuzzle);
             else
                 handleEndCondition(elmTryAgain);
