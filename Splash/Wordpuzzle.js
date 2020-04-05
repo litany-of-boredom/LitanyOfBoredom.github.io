@@ -3,8 +3,14 @@ function textChange()
     var text = document.getElementById("inputtext").value;
     var output = document.getElementById("outputtext").innerText;
     if(!output)
-        output = "aaaaaaaaaaa";
-
+    {
+        output = ""
+        for(var i = 0; i< 11; i++)
+        {
+            var rand =  Math.floor(Math.random() * 26 + 97);
+            output = output + String.fromCharCode(rand);
+        }
+    }
     var newoutput = compute(text,output);
 
     if(newoutput == compute("yqbuyqipivd", "trjjocikmij"))
