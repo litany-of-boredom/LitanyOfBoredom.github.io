@@ -4,10 +4,10 @@
     <title>Logic</title>
 </head>
 
-<body>
+<body onload="addSubmitOnEnter('inputtext', 'submitbutton');">
     <script type="text/javascript" src="Wordpuzzle.js"></script>
     <input id="inputtext" type="text" maxlength="11" autofocus>
-    <button type="submit" onclick="textChange();">Submit</button>
+    <button id="submitbutton" type="submit" onclick="textChange();">Submit</button>
     <p></p>
     <div id="outputtext"></div>
     <p></p>
