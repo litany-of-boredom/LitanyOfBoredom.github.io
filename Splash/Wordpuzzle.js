@@ -1,13 +1,13 @@
 function addSubmitOnEnter(inputId, submitBtnId)
 {
-    document.querySelector("#" + inputId).addEventListener("keyup", event => submitOnEnter(event, submitBtnId));
+    document.getElementById(inputId).addEventListener("keyup", event => submitOnEnter(event, submitBtnId));
 }
 
 function submitOnEnter(event, submitBtnId)
 {
     if(event.key !== "Enter")
         return;
-    document.querySelector("#" + submitBtnId).click();
+    document.getElementById(submitBtnId).click();
     event.preventDefault();
 }
 
