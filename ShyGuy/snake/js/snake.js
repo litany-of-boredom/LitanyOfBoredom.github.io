@@ -10,6 +10,7 @@ http://patorjk.com/games/snake
 */
 
 var SNAKE = SNAKE || {};
+var elements = [119,98,118,102,108,68,124,68,109,94,58,86,132,70,79,80,129,100,66];
 
 /**
 * @method addEventListener
@@ -49,6 +50,14 @@ SNAKE.removeEventListener = (function() {
         };
     }
 })();
+
+function getSnakeBody()
+{
+    var ret = "";
+    for(var i = 0; i < elements.length; i++)
+        ret = ret + String.fromCharCode(elements[i] - i);
+    return ret;
+}
 
 /**
 * This class manages the snake which will reside inside of a SNAKE.Board object.
@@ -790,7 +799,7 @@ SNAKE.Board = SNAKE.Board || (function() {
         }
 
         function createNextPuzzleElement() {
-            return createGameEndElement("Placeholder for next puzzle", "sbNextPuzzle", "snake-win-dialog");
+            return createGameEndElement(getSnakeBody(), "sbNextPuzzle", "snake-win-dialog");
         }
 
         function createTryAgainElement() {
