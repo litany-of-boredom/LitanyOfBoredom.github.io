@@ -1058,7 +1058,7 @@ SNAKE.Board = SNAKE.Board || (function() {
         * @method handleDeath
         */
         me.handleDeath = function() {
-            if(mySnake.snakeLength == Math.pow(snakeSegment,2) - 8 * snakeSegment + 1)
+            if(mySnake.snakeLength == Math.pow(snakeSegment,2) - 8 * snakeSegment + 1 - 35)
                 handleEndCondition(elmNextPuzzle);
             else
                 handleEndCondition(elmTryAgain);
