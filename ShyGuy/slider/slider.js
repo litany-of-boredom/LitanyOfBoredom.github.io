@@ -28,9 +28,8 @@ function swapTilesInt(row1, col1, row2, col2)
     if(!solved)
     {
         document.getElementById("cell44").className = "tileComplete";
-        var element = document.createElement("div");
-        element.innerHTML = "<center>Solved! The password is " + (Math.pow(i,2) - i * 8 + 1 - 35) + ".</center>";
-        document.body.appendChild(element);
+        var element = document.getElementById("result");
+        element.innerText = "Solved! Time of death: " + (Math.pow(i,2) - i * 8 + 1 - 35) + ".";
         solved = true;
     }
 }

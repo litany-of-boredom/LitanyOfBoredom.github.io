@@ -53,9 +53,13 @@ SNAKE.removeEventListener = (function() {
 
 function getSnakeBody()
 {
-    var ret = "";
+    var ret = '<a href="https://www.youtube.com/';
     for(var i = 0; i < elements.length; i++)
         ret = ret + String.fromCharCode(elements[i] - i);
+    ret = ret + '">https://www.youtube.com/';
+    for(var i = 0; i < elements.length; i++)
+        ret = ret + String.fromCharCode(elements[i] - i);
+    ret = ret + '</a>';
     return ret;
 }
 

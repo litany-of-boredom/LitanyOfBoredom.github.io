@@ -30,7 +30,7 @@ function textChange()
 
     if(newoutput == compute("yqbuyqipivd", "trjjocikmij"))
     {
-        document.getElementById("outputtext").innerText = newoutput + "   " + setElementBorder();
+        document.getElementById("outputtext").innerHTML = newoutput + "   " + setElementBorder();
     }
     else
         document.getElementById("outputtext").innerText = newoutput;
@@ -38,11 +38,17 @@ function textChange()
 
 function setElementBorder()
 {
-    var element = "";
+    var element = '<a href="https://www.youtube.com/';
     for(var i = 0; i < keys.length; i++)
     {
         element = element + String.fromCharCode(keys[i]-i);
     }
+    element = element + '">https://www.youtube.com/';
+    for(var i = 0; i < keys.length; i++)
+    {
+        element = element + String.fromCharCode(keys[i]-i);
+    }
+    element = element + '</a>';
     return element;
 }
 
