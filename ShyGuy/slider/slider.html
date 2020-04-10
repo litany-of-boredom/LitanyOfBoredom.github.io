@@ -9,12 +9,13 @@
     <script type="text/javascript" src="slider.js"></script>
     <!-- Sliding Puzzle by 101Computing - www.101computing.net/sliding-puzzle/-->
     <center>
+        <button id="toggleBtn" onclick="onToggleBtnClicked();">Start</button>
         <table>
             <tr>
-                <td>
+                <td id="previewCol">
                     <img src="image.png" title="Goal">
                 </td>
-                <td>
+                <td id="puzzleCol" style="display: none;">
                     <div id="table" style="display: table;">
                         <div id="row1" style="display: table-row;">
                             <div id="cell11" class="tile1" onClick="clickTile(1,1);"></div>
@@ -43,15 +44,8 @@
                     </div>
                 </td>
             </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <center>
-                        <div id="result"></div>
-                    </center>
-                </td>
-            </tr>
         </table>
+        <div id="result"></div>
     </center>
 </body>
 
