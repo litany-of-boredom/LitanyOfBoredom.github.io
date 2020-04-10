@@ -6,6 +6,7 @@ function swapTiles(cell1, cell2) {
 var tiles = [[0,1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]];
 var shuffled = false;
 var solved = false;
+var panels = [49,50,49,53,53,52,54,61,40,58,64,69,63,67];
 
 function swapTilesInt(row1, col1, row2, col2)
 {
@@ -29,7 +30,7 @@ function swapTilesInt(row1, col1, row2, col2)
     {
         document.getElementById("cell44").className = "tileComplete";
         var element = document.getElementById("result");
-        element.innerText = "Solved! Time of death: " + (Math.pow(i,2) - i * 8 + 1 - 35) + ".";
+        element.innerText = processPanel();
         solved = true;
     }
 }
@@ -40,6 +41,16 @@ function shuffle() {
         clickTile(Math.floor(Math.random() * 4 + 1), Math.floor(Math.random() * 4 + 1));
     }
     shuffled = true;
+}
+
+function processPanel()
+{
+    var ret = "Time of death: ";
+    for(var i = 0; i < panels.length; i++)
+    {
+        ret += String.fromCharCode(panels[i] - i);
+    }
+    return ret;
 }
 
 function clickTile(row, column) {

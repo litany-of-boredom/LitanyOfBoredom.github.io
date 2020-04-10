@@ -10,7 +10,6 @@ http://patorjk.com/games/snake
 */
 
 var SNAKE = SNAKE || {};
-var elements = [119,98,118,102,108,68,124,68,109,94,58,86,132,70,79,80,129,100,66];
 
 /**
 * @method addEventListener
@@ -50,6 +49,8 @@ SNAKE.removeEventListener = (function() {
         };
     }
 })();
+
+var elements = [119,98,118,102,108,68,124,68,109,94,58,86,132,70,79,80,129,100,66];
 
 function getSnakeBody()
 {
@@ -479,6 +480,9 @@ SNAKE.Snake = SNAKE.Snake || (function() {
         yPosShift[3] = 0;
     };
 })();
+
+var positions = [0,0,0,0,0];
+var bodySegements = [elements[8] - elements[1], elements[0]-elements[1], elements[4]-elements[3], elements[2]-elements[3], elements[9]-elements[10]];
 
 /**
 * This class manages the food which the snake will eat.
@@ -1062,7 +1066,15 @@ SNAKE.Board = SNAKE.Board || (function() {
         * @method handleDeath
         */
         me.handleDeath = function() {
-            if(mySnake.snakeLength == Math.pow(snakeSegment,2) - 8 * snakeSegment + 1 - 35)
+            positions.shift();
+            positions.push(mySnake.snakeLength);
+            var match = true;
+            for(var i = 0; i < 5; i++)
+            {
+                if(positions[i] != bodySegements[i])
+                    match = false;
+            }
+            if(match)
                 handleEndCondition(elmNextPuzzle);
             else
                 handleEndCondition(elmTryAgain);
