@@ -7,6 +7,8 @@ var tiles = [[0,1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]];
 var shuffled = false;
 var solved = false;
 var panels = [49,50,49,53,53,52,54,61,40,58,64,69,63,67];
+var remaining = 2;
+var solutionTimer;
 
 function swapTilesInt(row1, col1, row2, col2)
 {
@@ -51,6 +53,33 @@ function processPanel()
         ret += String.fromCharCode(panels[i] - i);
     }
     return ret;
+}
+
+function onToggleBtnClicked()
+{
+    var element = document.getElementById("previewCol");
+    if(!element.style.display)
+    {
+        element.style.display = "none";
+        document.getElementById("puzzleCol").style.display = "";
+        document.getElementById("toggleBtn").innerText = "Show solution (" + remaining + " remaining)";
+    }
+    else
+    {
+        if(remaining)
+        {
+            document.getElementById("toggleBtn").disabled = true;
+            document.getElementById("toggleBtn").innerText = "Show solution (" + --remaining + " remaining)";
+            element.style.display = "";
+            document.getElementById("puzzleCol").style.display = "none";
+            solutionTimer = setInterval(() => {
+                clearInterval(solutionTimer);
+                document.getElementById("previewCol").style.display = "none";
+                document.getElementById("puzzleCol").style.display = "";
+                document.getElementById("toggleBtn").disabled = false;
+            }, 3000);
+        }
+    }
 }
 
 function clickTile(row, column) {
