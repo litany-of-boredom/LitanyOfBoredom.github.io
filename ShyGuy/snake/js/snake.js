@@ -10,6 +10,7 @@ http://patorjk.com/games/snake
 */
 
 var SNAKE = SNAKE || {};
+var snakeSpeed = 80;
 
 /**
 * @method addEventListener
@@ -139,7 +140,7 @@ SNAKE.Snake = SNAKE.Snake || (function() {
             rowShift = [-1, 0, 1, 0],
             xPosShift = [],
             yPosShift = [],
-            snakeSpeed = 80,
+           // snakeSpeed = 80,
             isDead = false,
             isPaused = false;
 
@@ -1066,8 +1067,11 @@ SNAKE.Board = SNAKE.Board || (function() {
         * @method handleDeath
         */
         me.handleDeath = function() {
+
             positions.shift();
             positions.push(mySnake.snakeLength);
+            if(snakeSpeed < 140)
+                snakeSpeed += 5;
             var match = true;
             for(var i = 0; i < 5; i++)
             {
