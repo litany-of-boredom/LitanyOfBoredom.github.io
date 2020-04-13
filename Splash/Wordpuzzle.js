@@ -58,6 +58,9 @@ function compute(text, output)
     for(var i = 0; i < text.length; i++)
     {
         var c = text[i];
+        if(c >= 'A' && c <= 'Z')
+            c = String.fromCharCode(c.charCodeAt(0) + 32);
+
         if(c < 'a' || c > 'z')
         {
             build = build + output[i];
