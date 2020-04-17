@@ -482,8 +482,8 @@ SNAKE.Snake = SNAKE.Snake || (function() {
     };
 })();
 
-var positions = [0,0,0,0,0];
-var bodySegements = [elements[8] - elements[1], elements[0]-elements[1], elements[4]-elements[3], elements[2]-elements[3], elements[9]-elements[10]];
+var counter = 0;
+var bodySegments = [elements[8] - elements[1], elements[0]-elements[1], elements[4]-elements[3], elements[2]-elements[3], elements[9]-elements[10]];
 
 /**
 * This class manages the food which the snake will eat.
@@ -1067,18 +1067,13 @@ SNAKE.Board = SNAKE.Board || (function() {
         * @method handleDeath
         */
         me.handleDeath = function() {
-
-            positions.shift();
-            positions.push(mySnake.snakeLength);
-            if(snakeSpeed < 140)
+            if(mySnake.snakeLength == bodySegments[counter])
+                counter++;
+            else if(snakeSpeed < 140)
                 snakeSpeed += 5;
-            var match = true;
-            for(var i = 0; i < 5; i++)
-            {
-                if(positions[i] != bodySegements[i])
-                    match = false;
-            }
-            if(match)
+            
+
+            if(counter > 4)
                 handleEndCondition(elmNextPuzzle);
             else
                 handleEndCondition(elmTryAgain);
