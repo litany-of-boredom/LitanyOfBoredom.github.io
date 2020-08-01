@@ -16,7 +16,7 @@ h1, h2, h3, h4 {
 /* Main content area */
  
 #content {
-  margin: 80px 70px;
+  margin: 10px 10px;
   text-align: center;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -46,7 +46,7 @@ h1, h2, h3, h4 {
 #cardSlots {
   margin: 0 auto 3em auto;
   background: navy;
-  float: right;
+  float: left;
 }
  
 /* The initial pile of unsorted cards */
@@ -58,9 +58,9 @@ h1, h2, h3, h4 {
 }
  
 #cardSlots, #cardPile {
-  width: 47%;
+  width: 30%;
   height: 80%;
-  padding: .85em;
+  padding: .3em;
   border: 2px solid #333;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -74,9 +74,9 @@ h1, h2, h3, h4 {
  
 #cardSlots div, #cardPile div {
   float: left;
-  width: 43%;
+  width: 94%;
   height: 18%;
-  padding: .85em;
+  padding: 0px;
   padding-top: 40px;
   padding-bottom: 0;
   border: 2px solid #333;
@@ -123,8 +123,6 @@ h1, h2, h3, h4 {
 #card6.correct { background: cyan; }
 #card7.correct { background: blue; }
 #card8.correct { background: indigo; }
-#card9.correct { background: purple; }
-#card10.correct { background: violet; }
  
  
 /* "You did it!" message */
