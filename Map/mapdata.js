@@ -960,16 +960,16 @@ var simplemaps_worldmap_mapdata={
       lat: "54.5074",
       lng: "-3.3278",
       name: "Elizabethan England",
-      url: "https://en.wikipedia.org/wiki/Elizabethan_era",
+      url: "https://forms.gle/Xs7XE7hT2eJrzbe18",
       type: "circle",
       size: "15"
     },
     "1": {
-      name: "Japan",
-      lat: "35.666666670",
-      lng: "139.750000000",
+      name: "China",
+      lat: "39.9042",
+      lng: "116.4074",
       type: "circle",
-      url: "https://en.wikipedia.org/wiki/Tokyo",
+      url: "https://forms.gle/jUSRzThJKSToyjXD8",
       size: "15"
     },
     "2": {
@@ -977,31 +977,31 @@ var simplemaps_worldmap_mapdata={
       lat: "55.7558",
       lng: "37.6173",
       type: "circle",
-      url: "https://en.wikipedia.org/wiki/Cold_War",
+      url: "https://forms.gle/bQN58CwYFEoMcJxo7",
       size: "15"
     },
     "3": {
       name: "Ghana",
-      lat: "5.6037",
+      lat: "6.1037",
       lng: "-0.187",
       type: "circle",
-      url: "https://en.wikipedia.org/wiki/Accra",
+      url: "https://forms.gle/9ugE3j3cnuJWE6np6",
       size: "15"
     },
     "4": {
-      name: "Mayan Empire",
-      lat: "17.2220",
-      lng: "-89.6237",
+      name: "Incan Empire",
+      lat: "-13.1631",
+      lng: "-72.5450",
       type: "circle",
-      url: "https://en.wikipedia.org/wiki/Maya_civilization",
+      url: "https://forms.gle/Xy6Hj8guqAUy8xzUA",
       size: "15"
     },
     "5": {
       name: "India",
-      lat: "22.0574",
-      lng: "78.9382",
+      lat: "19.0760",
+      lng: "73.3",
       type: "circle",
-      url: "https://en.wikipedia.org/wiki/India",
+      url: "https://forms.gle/LqWrtkvEZGiMF5iW6",
       size: "15"
     },
     "6": {
@@ -1009,15 +1009,15 @@ var simplemaps_worldmap_mapdata={
       lat: "33.3152",
       lng: "44.3661",
       type: "circle",
-      url: "https://en.wikipedia.org/wiki/Baghdad",
+      url: "https://forms.gle/QFEEddoiQQXWFFgU8",
       size: "15"
     },
     "7": {
-      lat: "32",
-      lng: "-40",
+      lat: "24.5",
+      lng: "-71.5",
       type: "circle",
       name: "Golden Age of Piracy",
-      url: "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy",
+      url: "https://forms.gle/y5zSJ5ekqUnkR8k57",
       size: "15"
     }
   },
