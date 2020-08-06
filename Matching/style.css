@@ -2,15 +2,15 @@
  
 body {
   margin: 30px;
-  font-family: "Georgia", serif;
+  font-family: 'Futura', Arial, sans-serif;
   line-height: 1.8em;
-  color: #333;
+  color: #fff;
 }
  
 /* Give headings their own font */
  
 h1, h2, h3, h4 {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-family: 'Futura', Arial, sans-serif;
 }
  
 /* Main content area */
@@ -45,7 +45,7 @@ h1, h2, h3, h4 {
  
 #cardSlots {
   margin: 0 auto 3em auto;
-  background: navy;
+  background: white;
   float: left;
 }
  
@@ -53,7 +53,7 @@ h1, h2, h3, h4 {
  
 #cardPile {
   margin: 0 auto;
-  background: green;
+  background: white;
   float: left;
 }
  
@@ -84,7 +84,7 @@ h1, h2, h3, h4 {
   -webkit-border-radius: 10px;
   border-radius: 10px;
   margin: 10px 0 0 10px;
-  background: #fff;
+  background: rgb(141,141,141);
 }
  
 /*#cardSlots div:first-child, #cardPile div:first-child {
@@ -100,7 +100,7 @@ h1, h2, h3, h4 {
 }
  
 #cardPile div {
-  background: #666;
+  background: rgb(141, 141, 141);
   color: #fff;
   font-size: 1em;
   text-shadow: 0 0 3px #000;
@@ -115,14 +115,14 @@ h1, h2, h3, h4 {
  
 /* Individually coloured cards */
  
-#card1.correct { background: red; }
-#card2.correct { background: brown; }
-#card3.correct { background: orange; }
-#card4.correct { background: yellow; }
-#card5.correct { background: green; }
-#card6.correct { background: cyan; }
-#card7.correct { background: blue; }
-#card8.correct { background: indigo; }
+#card1.correct { background: rgb(90, 90, 90); }
+#card2.correct { background: rgb(90, 90, 90); }
+#card3.correct { background: rgb(90, 90, 90); }
+#card4.correct { background: rgb(90, 90, 90); }
+#card5.correct { background: rgb(90, 90, 90); }
+#card6.correct { background: rgb(90, 90, 90); }
+#card7.correct { background: rgb(90, 90, 90); }
+#card8.correct { background: rgb(90, 90, 90); }
  
  
 /* "You did it!" message */
