@@ -16,7 +16,7 @@ function textChange()
     var text = document.getElementById("inputtext").value;
     if(check(text))
     {
-        window.location.href = (button + convert("Yzozmxv"));
+        window.location.href = (button + convert("Yzozmxv") + "/");
     }
     else
     {
@@ -56,4 +56,4 @@ function convert(text)
     return res;
 }
 
-var button = "https://litanyofboredom.github.io/";
+var button = "../";
