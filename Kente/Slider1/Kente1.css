@@ -1,13 +1,13 @@
 BODY {
-    background: black;
+    background: white;
     color: ghostwhite;
     font-family: Calibri;
 }
 
 .tile0, .tile1, .tile2, .tile3, .tile4, .tile5, .tile6, .tile7, .tile8, .tile9 {
     display: table-cell;
-    width: 165px;
-    height: 193px;
+    width: 120px;
+    height: 120px;
     border: 1px solid gray;
     background: url(../1.PNG);
     cursor: pointer;
